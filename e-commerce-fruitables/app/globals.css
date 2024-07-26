@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    padding: 1rem;
+    background-color: white;
+    width: 100%;
+    border: 1px solid black;
+    @apply z-50;
+  }
+
+  [id^='link-']:not([id^='link-4']) {
+    @apply mb-4;
+  }
+}

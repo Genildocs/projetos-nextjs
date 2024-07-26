@@ -1,7 +1,18 @@
-import { Inter } from 'next/font/google';
+import { Open_Sans, Raleway } from 'next/font/google';
 import './globals.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const open_Sans = Open_Sans({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-open-sans',
+});
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: ['600', '800'],
+  variable: '--font-raleway',
+});
 
 export const metadata = {
   title: 'Fruitables e-commerce',
@@ -11,7 +22,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+      <body className={`${open_Sans.variable} ${raleway.variable}`}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
